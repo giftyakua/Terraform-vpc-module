@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 resource "aws_vpc" "main" {
@@ -110,8 +110,16 @@ resource "aws_instance" "private_instance" {
   }
 }
 
+resource "aws_eip" "nat" {
+  vpc = true
+
+  tags = {
+    Name = format("%s-nat-eip", var.vpc_name)
+  }
+}
+
 resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_internet_gateway.gw.id
+  allocation_id = aws_eip.nat.id
   subnet_id     = aws_subnet.public[0].id
 
   tags = {

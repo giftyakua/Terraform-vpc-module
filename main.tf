@@ -110,14 +110,14 @@ resource "aws_instance" "private_instance" {
   }
 }
 
-resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_internet_gateway.gw.id
-  subnet_id     = aws_subnet.public[0].id
-
-  tags = {
-    Name = format("%s-nat-gateway", var.vpc_name)
-  }
-}
+#resource "aws_nat_gateway" "nat" {
+ # allocation_id = aws_internet_gateway.gw.id
+  #subnet_id     = aws_subnet.public[0].id
+#
+ # tags = {
+  #  Name = format("%s-nat-gateway", var.vpc_name)
+  #}
+#}
 
 resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id

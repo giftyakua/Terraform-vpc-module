@@ -37,13 +37,13 @@ variable "public_subnets" {
 variable "public_ami" {
   description = "The AMI ID for the public EC2 instance"
   type        = string
-  default     = "ami-0c55b159cbfafe1f0" # Replace with your desired public EC2 AMI ID
+  default     = "ami-053b0d53c279acc90" # Replace with your desired public EC2 AMI ID
 }
 
 variable "private_ami" {
   description = "The AMI ID for the private EC2 instance"
   type        = string
-  default     = "ami-0c55b159cbfafe1f0" # Replace with your desired private EC2 AMI ID
+  default     = "ami-053b0d53c279acc90" # Replace with your desired private EC2 AMI ID
 }
 
 variable "instance_type" {

@@ -38,8 +38,8 @@ jobs:
     - name: Terraform Init
       id: init
       env:
-        AWS_BUCKET_NAME: terra-bucket-1
-        AWS_BUCKET_KEY_NAME: terra-bucket-1.tfstate
+        AWS_BUCKET_NAME: jay-jay-1
+        AWS_BUCKET_KEY_NAME: jay-jay.tfstate
       run: terraform init -backend-config="bucket=jay-jay-1" -backend-config="key=jay-jay.tfstate" -backend-config="region=us-east-1"
 
     # Checks that all Terraform configuration files adhere to a canonical format

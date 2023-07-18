@@ -1,4 +1,3 @@
-
 variable "aws_region" {
   description = "The AWS region to deploy resources"
   type        = string
@@ -17,7 +16,7 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
 }
 
-variable "vpc_availability_zones" {
+variable "availability_zones" {
   description = "The availability zones for the VPC subnets"
   type        = list(string)
   default     = ["us-east-1a", "us-east-1b"] # Replace with your desired availability zones
@@ -33,12 +32,6 @@ variable "public_subnets" {
   description = "The CIDR blocks for the public subnets"
   type        = list(string)
   default     = ["10.0.3.0/24", "10.0.4.0/24"] # Replace with your desired public subnet CIDR ranges
-}
-
-variable "enable_nat_gateway" {
-  description = "Whether to create a NAT gateway"
-  type        = bool
-  default     = true
 }
 
 variable "public_ami" {
